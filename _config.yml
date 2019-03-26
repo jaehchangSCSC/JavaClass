@@ -11,8 +11,5 @@ name : "Jae Hyuck Chang"
 
 description : "장재혁, Java프로그래밍실습"
 
-url : "https://jaehchangscsc.github.io/JavaClass/"
-
-
 markdown : kramdown
 highligher : rouge
