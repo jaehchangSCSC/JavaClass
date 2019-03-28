@@ -1,3 +1,5 @@
+package PolymorphismPractice;
+
 abstract class Birds extends Animal{
     //Abstract >> 구체화
     public void move(){
