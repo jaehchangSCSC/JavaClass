@@ -7,4 +7,10 @@ class Dog extends Mammal{
     public void makenoise(){
         System.out.println("Woof Woof");
     }
+
+    @Override
+    public String getFood(){
+        food = "Beef";
+        return food;
+    }
 }

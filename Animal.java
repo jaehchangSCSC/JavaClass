@@ -2,6 +2,10 @@ abstract class Animal{
     int age;
     String sex;
     String status = "awake";
+    protected String food;
+    public String getFood(){
+        return food;
+    } 
     abstract void eat();
     abstract void makenoise();
     abstract void move();
@@ -13,4 +17,5 @@ abstract class Animal{
         System.out.println("waking up");
         this.status = "awake";
     }
+
 }
