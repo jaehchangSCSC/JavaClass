@@ -17,5 +17,4 @@ abstract class Animal{
         System.out.println("waking up");
         this.status = "awake";
     }
-
 }
