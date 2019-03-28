@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - TestInterface",
+            "request": "launch",
+            "mainClass": "InterfacePractice.TestInterface",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - TestingPrivate",
             "request": "launch",
             "mainClass": "TestingPrivate",
