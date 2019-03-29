@@ -25,12 +25,15 @@ abstract class Animal{
             this.fullness -= 1;
         }
     }
+    //상속된 Sub-Class가 쓰고 싶은데 더 광범위한 곳에서는 함부로 조작못하게 만들고 싶어서
+    //일부로 Protected를 써봤습니다.
     protected void movementmade(){
         this.fullness -= 1;
     }
     protected int checkfullness(){
         return fullness;
     }
+    
     public void eat(){
         if(this.checkstatus() == "sleep"){
             System.out.println(this.name + " is currently sleeping, cannot eat. (Wake it up first)");
