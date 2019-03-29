@@ -2,9 +2,10 @@ package AbstractPractice;
 
 abstract class Animal{
     public String food;
+    public String noise;
     private String status = "awake";
     // 곳에 이 동물의 Status를 조작하면 안될 것 같아서 private으로 설정하였습니다.
-    abstract String makeNoise();
+    abstract void makeNoise();
     abstract void eat();
     abstract void roam();
     public void attack(){
@@ -30,5 +31,9 @@ abstract class Animal{
             this.status = "awake";
             System.out.println("Waking up");
         }
+    }
+    //Set Food
+    public void setfood(String newfood){
+        this.food = newfood;
     }
 }
