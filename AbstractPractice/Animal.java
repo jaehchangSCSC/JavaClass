@@ -1,13 +1,17 @@
 package AbstractPractice;
 
 abstract class Animal{
+    //기본 변수에 대한 Method는 Animal에 공통적으로 갖고 있을 수 있다
     public String food;
     public String noise;
     public String name;
+    //아직 정해지지 않은 것은 Abstract으로 놓아서 Sub-Class에서 구체화
     abstract void roam();
     abstract void attack();
+    //오브젝트의 상태로, 임의로 접근이 불가하도록 Private으로 설정하고 Animal에서 변경
     private int fullness = 5;
     private String status = "awake";
+
     // 곳에 이 동물의 Status를 조작하면 안될 것 같아서 private으로 설정하였습니다.
     public void makeNoise(){
         if(this.checkstatus() == "sleep"){
