@@ -6,6 +6,7 @@ public class Hippo extends Animal{
         this.noise = "으어어어";
         this.name = newName;
     }
+    //abstract 구체화
     public void roam(){
         System.out.println("천천히 느리게");
     }
