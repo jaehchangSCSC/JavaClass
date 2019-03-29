@@ -11,4 +11,4 @@
 #### 2019년 3월 28일
 > Interface 작업
 >> Interface를 생성하여서 한 Sub-class는 상속뿐만 아니라 다수의 Interface를 implement
->>> 작업한 내용 : 
+>>> 작업한 내용 : 1) Interface를 생성 (Pet Interface) 2) RoboDog라는 Robot의 Sub-class로 Pet을 Implement하였습니다. 3) Animal >> Canine을 상속받은 Dog에 Pet을 Implement해서도 같이 만들어 보겠습니다. (예정) 4) 김민우 학우님이 보여준 것 처럼 <Type>에 따른 제약사항도 같이 만들어 보겠습니다. (예정)
