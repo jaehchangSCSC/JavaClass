@@ -1,8 +1,10 @@
 package CastingPractice;
 import java.util.*;
 
-class Squirtle extends Pokemon implements WaterType{
+class Squirtle extends WaterType{
     Scanner sc = new Scanner(System.in);
+    public Squirtle(){        
+    }
     public Squirtle(String newName, int initial_level, String Caught){
         this.name = newName;
         this.level = initial_level;
@@ -10,10 +12,10 @@ class Squirtle extends Pokemon implements WaterType{
         this.location = Caught;
         this.intimacy = 0;
     }
-
+    //Waterattack 구체화
     public int waterattack(){
         int damage = 5;
-        System.out.println(this.name + " 거품 사용! ");
+        System.out.println(this.name + " " + this.skills[0] +" 사용! ");
         return damage;
     }
 
@@ -21,6 +23,9 @@ class Squirtle extends Pokemon implements WaterType{
         this.level += 1;
         if(this.level >= 16){
             this.evolve();
+        }else if(this.level > 100){
+            this.level -= 1;
+            System.out.println("더 이상 Level을 올릴 수 없습니다.")
         }
     }
 

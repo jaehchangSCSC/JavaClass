@@ -1,9 +1,11 @@
 package CastingPractice;
 import java.util.*;
 
-class Wartotle extends Pokemon implements WaterType{
+class Wartotle extends Squirtle{
     Scanner sc = new Scanner(System.in);
-    public Wartotle(String newName, int initial_level, String Caught){
+    public Wartotle(){     
+    }
+    public Wartotle(String newName, int initial_level, String Caught){s
         this.name = newName;
         this.level = initial_level;
         this.HP = 20 + 2 * (this.level);
@@ -13,17 +15,22 @@ class Wartotle extends Pokemon implements WaterType{
 
     public int waterattack(){
         int damage = 7;
-        System.out.println(this.name + " 물대포 사용! ");
+        System.out.println(this.name + " " + this.skills[1] +" 사용! ");
         return damage;
     }
 
+    @Override
     public void levelup(){
         this.level += 1;
         if(this.level >= 36){
             this.evolve();
+        } else if(this.level > 100){
+            this.level -= 1;
+            System.out.println("더 이상 Level을 올릴 수 없습니다.")
         }
     }
 
+    @Override
     public void evolve(){
         if(this.level < 36){
             System.out.println("아직 진화하기에는 이릅니다.");

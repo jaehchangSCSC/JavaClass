@@ -1,7 +1,7 @@
 package CastingPractice;
 import java.util.*;
 
-class Blastoise extends Pokemon implements WaterType{
+class Blastoise extends Wartotle{
     Scanner sc = new Scanner(System.in);
     public Blastoise(String newName, int initial_level, String Caught){
         this.name = newName;
@@ -13,10 +13,11 @@ class Blastoise extends Pokemon implements WaterType{
 
     public int waterattack(){
         int damage = 10;
-        System.out.println(this.name + " 하이드로펌프 사용! ");
+        System.out.println(this.name + " " + this.skills[2] +" 사용! ");
         return damage;
     }
 
+    @Override
     public void levelup(){
         if(this.level <= 100){
             this.level += 1;
@@ -25,6 +26,7 @@ class Blastoise extends Pokemon implements WaterType{
         }
     }
 
+    @Override
     public void evolve(){
         System.out.println("더 이상 진화를 할 수 없습니다.");
     }

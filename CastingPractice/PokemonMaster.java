@@ -1,7 +1,5 @@
 package CastingPractice;
 
-abstract class PokemonMaster{
-    public String MasterName;
+interface PokemonMater{
+    
 }
-
-//interface로 해야하나..?
