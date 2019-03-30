@@ -1,6 +1,6 @@
 package InterfacePractice;
 
-public interface Pet {
+interface Pet {
     public abstract void play();
     public abstract void beFriendly();
 }
