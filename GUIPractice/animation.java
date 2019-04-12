@@ -6,9 +6,10 @@ import java.awt.*;
 public class animation{
     int x = 55;
     int y = 40;
+    int y_max = 0;
     //방향도 추가해보자 (++이나 --으로는 현재가고 있는 방향을 알 수가 없다)
     int dx = 2;
-    int dy = 3;
+    int dy = 9;
     public static void main(String[] args){
         animation gui = new animation();
         gui.go();
@@ -22,27 +23,31 @@ public class animation{
         frame.setSize(100,500);
         frame.setVisible(true);
         while(true){
-            if(x>=100 && y>=400){
+            int gravity_effect = -5;
+            if(y >= 400){
+                y_max = y_max - gravity_effect;
+            }
+            if(x>=100 && y>=(400)){
                 dx = -2;
-                dy = -3;
+                dy = -1;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
-            }else if(x<=0 && y <= 0){
+            }else if(x<=0 && y <= y_max){
                 dx = 2;
-                dy = 3;
+                dy = 9;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
             }else if(x<=0 && y>=400){
                 dx = 2;
-                dy = -3;
+                dy = -1;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
-            }else if(x>=100 && y<=0){
+            }else if(x>=100 && y<=y_max){
                 dx = -2;
-                dy = 3;
+                dy = 9;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
@@ -57,12 +62,12 @@ public class animation{
                 y = y + dy;
                 drawPanel.repaint();
             }else if(y>=400){
-                dy = -3;
+                dy = -1;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
-            }else if(y<=0){
-                dy = 3;
+            }else if(y<=y_max){
+                dy = 9;
                 x = x + dx;
                 y = y + dy;
                 drawPanel.repaint();
