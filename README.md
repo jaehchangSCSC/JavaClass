@@ -22,3 +22,7 @@
 >> [GUI ASSIST](https://programmingsummaries.tistory.com/61 "GUI ASSIST LINK (참고)")
 >>> 향후 계산기 만들기
 >>>> 혼자 개인적으로 갖고 놀면서 연습
+
+#### 2019년 4월 12일
+> jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); >> X를 종료버튼으로 프로그램을 끝낸다
+>> 교수님이 주신 Animation코드에서 Bouncing을 추가해봤다

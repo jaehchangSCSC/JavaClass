@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - animation",
+            "request": "launch",
+            "mainClass": "guipractice.animation",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - compositelayout",
+            "request": "launch",
+            "mainClass": "guipractice.compositelayout",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - gridpractice",
+            "request": "launch",
+            "mainClass": "guipractice.gridpractice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - graphicpractice",
+            "request": "launch",
+            "mainClass": "guipractice.graphicpractice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - HelloworldGui",
             "request": "launch",
             "mainClass": "HelloworldGui",
