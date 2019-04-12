@@ -5,6 +5,7 @@
 
 #### 참고자료
 > [SWING PACKAGE DOCUMENTATION](https://docs.oracle.com/javase/8/docs/api/index.html?javax/swing/package-summary.html "SWING PACKAGE DOCUMENTATION")
+>> Swing Package Documenation으로 사용법이 헷갈릴 때 참고하면 좋을 것 같습니당.
 
 #### 2019년 3월 21일
 > 클래스 추상화 작업
