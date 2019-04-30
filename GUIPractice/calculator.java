@@ -717,7 +717,15 @@ public class calculator extends JFrame implements ActionListener {
         //root
         Buttons[17].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                click += Buttons[17].getLabel();
+                temp = Double.parseDouble(click);
+                temp = Math.sqrt(temp);
+                click = temp+"";
+                if(operator == true){
+                    second = Double.parseDouble(click);
+                    secondtyped = true;
+                }else{
+                    first = Double.parseDouble(click);
+                }
                 calinput.setText(click);
             }
         });
