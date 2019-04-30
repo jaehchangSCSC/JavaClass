@@ -842,9 +842,8 @@ public class calculator extends JFrame implements ActionListener {
         //문제점은 0에서 지우면 TextField에서 사라진다
         Buttons[21].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                if(click.length() != 0){
-                    click = calinput.getText();
-                    click = click.substring(0, click.length()-1);
+                if(click.length() == 1){
+                    click = "0";
                     calinput.setText(click);
                     if(operator == true){
                         second = Double.parseDouble(click);
@@ -852,8 +851,12 @@ public class calculator extends JFrame implements ActionListener {
                     }else{
                         first = Double.parseDouble(click);
                     }
-                }else if(click.length() == 0 || click == "0"){
-                    click = "0";
+                }else if(click.length() != 0){
+                    click = calinput.getText();
+                    click = click.substring(0, click.length()-1);
+                    if(click.indexOf(".") == -1){
+                        onedecimal = false;
+                    }
                     calinput.setText(click);
                     if(operator == true){
                         second = Double.parseDouble(click);
