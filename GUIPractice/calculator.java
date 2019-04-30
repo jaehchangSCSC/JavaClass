@@ -523,7 +523,12 @@ public class calculator extends JFrame implements ActionListener{
         //Delete one digit
         Buttons[21].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                click = click.substring(0,click.length()-1);
+                if(click.length() != 0){
+                    click = calinput.getText();
+                    click = click.substring(0, click.length()-1);
+                }else{
+                    click = "0";
+                }
                 if(secondtyped = true){
                     second = Double.parseDouble(click);
                 }else{
@@ -536,25 +541,31 @@ public class calculator extends JFrame implements ActionListener{
         //MR
         Buttons[22].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                
+                click = memory + "";
+                calinput.setText(click);
+                click = "";
             }
         });
         //Memory Clear
         Buttons[23].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                
+                memory = 0;
             }
         });
         //Memory Plus
         Buttons[24].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                
+                memory += first;
+                first = 0;
+                click = "";
             }
         });
         //Memory Minus
         Buttons[25].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-
+                memory -= first;
+                first = 0;
+                click = "";
             }
         });
 
