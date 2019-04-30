@@ -26,4 +26,6 @@
 #### 2019년 4월 12일
 > jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); >> X를 종료버튼으로 프로그램을 끝낸다
 >>> 교수님이 주신 Animation코드에서 Bouncing을 추가해봤다
->>>> 
+
+#### 2019년 4월 30일
+> Calculator는 guipractice 폴더 참고
