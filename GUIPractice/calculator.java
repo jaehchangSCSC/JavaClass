@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+//README확인해주세요! (guipractice안에 있는 README파일)
 public class calculator extends JFrame implements ActionListener {
     public String click;
     public String operation;
