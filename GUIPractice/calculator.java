@@ -7,7 +7,7 @@ import javax.swing.JTextField;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//README확인해주세요! (guipractice안에 있는 README파일)
+
 public class calculator extends JFrame implements ActionListener {
     public String click;
     public String operation;
@@ -78,7 +78,7 @@ public class calculator extends JFrame implements ActionListener {
                         first = Double.parseDouble(click);
                     }
                 }else{
-                    click += Buttons[1].getLabel();
+                    click += Buttons[0].getLabel();
                     if(operator == true){
                         second = Double.parseDouble(click);
                         secondtyped = true;
@@ -543,8 +543,26 @@ public class calculator extends JFrame implements ActionListener {
         //sign changer
         Buttons[15].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-
-                
+                temp = Double.parseDouble(click);
+                if(temp >= 0){
+                    temp -= 2*temp;
+                    click = temp+"";
+                    if(operator == true){
+                        second = Double.parseDouble(click);
+                        secondtyped = true;
+                    }else{
+                        first = Double.parseDouble(click);
+                    }
+                }else{
+                    temp += (-2)*temp;
+                    click = temp+"";
+                    if(operator == true){
+                        second = Double.parseDouble(click);
+                        secondtyped = true;
+                    }else{
+                        first = Double.parseDouble(click);
+                    }
+                }
                 calinput.setText(click);                
             }
         });
@@ -553,7 +571,7 @@ public class calculator extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent e){
                 //여태 들어간 click을 후위로 변환하고 계산
                 if(operator = false){
-                }else if(operator == true &&  double_operator == false){
+                }else if(operator = true && double_operator == false){
                     switch(operation){
                         case "+":
                             if(secondtyped = false){
@@ -631,7 +649,7 @@ public class calculator extends JFrame implements ActionListener {
                         default:
                             break;
                     }
-                }else if(operator == true &&  double_operator == false){
+                }else if(double_operator = true){
                     switch(operation){
                         case "++":
                             if(secondtyped = false){
