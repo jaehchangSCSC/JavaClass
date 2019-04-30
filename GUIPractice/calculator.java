@@ -1,15 +1,17 @@
 package guipractice;
 
+
 import javax.swing.*;
 import javax.swing.JTextField;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class calculator extends JFrame implements ActionListener{
-    public String click = new String("");
+public class calculator extends JFrame implements ActionListener {
+    public String click;
     public String operation;
-    //연산시 사용 변수
+    // 연산시 사용 변수
     public double ANS = 0;
     public double first = 0;
     public double second = 0;
@@ -17,28 +19,27 @@ public class calculator extends JFrame implements ActionListener{
 
     public double temp = 0;
     public double memory = 0;
-
     public int buttonsetter = 0;
 
     public boolean onedecimal = false;
     public boolean operator = false;
     public boolean double_operator = false;
 
-
     public calculator() {
+        click = "0";
         setTitle("Calculator");
-        JTextField calinput = new JTextField();
+        JTextField calinput = new JTextField(click);
         calinput.setHorizontalAlignment(JTextField.RIGHT);
         calinput.setFont(new Font(null, Font.PLAIN, 28));
         calinput.setEditable(false);
         Container pane = getContentPane();
         JButton[] Buttons = new JButton[26];
-        for(int i = 0; i<=9; i++){
+        for (int i = 0; i <= 9; i++) {
             Buttons[i] = new JButton(String.valueOf(i));
-            //0부터 9까지 입력
+            // 0부터 9까지 입력
             Buttons[i].setFont(new Font(null, Font.PLAIN, 10));
         }
-        //연산 및 00
+        // 연산 및 00
         Buttons[10] = new JButton("00");
         Buttons[11] = new JButton(".");
         Buttons[12] = new JButton("－");
@@ -48,43 +49,52 @@ public class calculator extends JFrame implements ActionListener{
         Buttons[16] = new JButton("＝");
         Buttons[17] = new JButton("√");
         Buttons[18] = new JButton("+");
-        //Control
+        // Control
         Buttons[19] = new JButton("C");
         Buttons[20] = new JButton("AC");
         Buttons[21] = new JButton("←");
-        //Memory
-        //Memory Return
+        // Memory
+        // Memory Return
         Buttons[22] = new JButton("MR");
-        //Memory Clear
+        // Memory Clear
         Buttons[23] = new JButton("MC");
-        //Memory plus
+        // Memory plus
         Buttons[24] = new JButton("M+");
-        //Memory minus
+        // Memory minus
         Buttons[25] = new JButton("M-");
-        //calinput => "INPUT AREA"
-        //result => "RESULT AREA"
+        // calinput => "INPUT AREA"
+        // result => "RESULT AREA"
 
-        //버튼 입력부분 시작
-        //숫자 0
-        Buttons[0].addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                if(click == "0"){
-                    calinput.setText(click);
-                }else{
-                    click += Buttons[0].getLabel();
+        // 버튼 입력부분 시작
+        // 숫자 0
+        Buttons[0].addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if(click == "0" || click == ""){
+                    click = "0";
                     if(operator == true){
                         second = Double.parseDouble(click);
                         secondtyped = true;
                     }else{
                         first = Double.parseDouble(click);
                     }
-                    calinput.setText(click);
+                }else{
+                    click += Buttons[1].getLabel();
+                    if(operator == true){
+                        second = Double.parseDouble(click);
+                        secondtyped = true;
+                    }else{
+                        first = Double.parseDouble(click);
+                    }
                 }
+                calinput.setText(click);
             }
         });
         //숫자 1
         Buttons[1].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[1].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -98,6 +108,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 2
         Buttons[2].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[2].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -111,6 +124,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 3
         Buttons[3].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[3].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -124,6 +140,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 4
         Buttons[4].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[4].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -137,6 +156,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 5
         Buttons[5].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[5].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -150,6 +172,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 6
         Buttons[6].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[6].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -163,6 +188,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 7
         Buttons[7].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[7].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -176,6 +204,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 8
         Buttons[8].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[8].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -189,6 +220,9 @@ public class calculator extends JFrame implements ActionListener{
         //숫자 9
         Buttons[9].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+                if(click == "0"){
+                    click = "";
+                }
                 click += Buttons[9].getLabel();
                 if(operator == true){
                     second = Double.parseDouble(click);
@@ -211,7 +245,7 @@ public class calculator extends JFrame implements ActionListener{
                         first = Double.parseDouble(click);
                     }
                     calinput.setText(click);
-                onedecimal = true;
+                    onedecimal = true;
                 }else if(click == "0"){
                     return;
                 }else{
@@ -231,18 +265,11 @@ public class calculator extends JFrame implements ActionListener{
         Buttons[11].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(onedecimal == false){
-                    if(click.length() == 0){
-                        click = "0";
-                    }
-                    click += Buttons[11].getLabel();
-                    if(operator == true){
-                        second = Double.parseDouble(click);
-                        secondtyped = true;
-                    }else{
-                        first = Double.parseDouble(click);
-                    }
-                    calinput.setText(click);
+                    click += ".";
                     onedecimal = true;
+                    calinput.setText(click);
+                }else{
+                    calinput.setText(click);
                 }
             }
         });
@@ -252,19 +279,86 @@ public class calculator extends JFrame implements ActionListener{
                 if(operator == true && secondtyped == false){
                     double_operator = true;
                     operation = "--";
+                    onedecimal = false;
                 }else if (operator == true && secondtyped == true){
-                    ANS = first - second;
-                    first = ANS;
-                    second = 0;
-                    secondtyped = false;
-                    operation = "";
-                    click = ANS + "";
-                    calinput.setText(click);
-                    click = "";
+                    switch(operation){
+                        case "+":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                    operation = "-";
                 }else{
                     operator = true;
-                    click = "";
+                    click = "0";
                     operation ="-";
+                    onedecimal = false;
                 }
             }
         });
@@ -274,19 +368,86 @@ public class calculator extends JFrame implements ActionListener{
                 if(operator == true && secondtyped == false){
                     double_operator = true;
                     operation = "**";
+                    onedecimal = false;
                 }else if (operator == true && secondtyped == true){
-                    ANS = first * second;
-                    first = ANS;
-                    second = 0;
-                    secondtyped = false;
-                    click = ANS + "";
-                    operation = "";
-                    calinput.setText(click);
-                    click = "";
+                    switch(operation){
+                        case "+":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                    operation = "*";
                 }else{
                     operator = true;
-                    click = "";
+                    click = "0";
                     operation ="*";
+                    onedecimal = false;
                 }
             }
         });
@@ -296,39 +457,95 @@ public class calculator extends JFrame implements ActionListener{
                 if(operator == true && secondtyped == false){
                     double_operator = true;
                     operation = "//";
+                    onedecimal = false;
                 }else if (operator == true && secondtyped == true){
-                    if(second == 0){
-                        click = "ERROR";
-                        calinput.setText(click);
-                        click = "";
-                        operator = false;
-                        operation = "";
-                        first = 0;
-                        second = 0;
-                        secondtyped = false;
-                        
-                    }else{
-                        ANS = first / second;
-                        first = ANS;
-                        second = 0;
-                        secondtyped = false;
-                        click = ANS + "";
-                        operation = "";
-                        calinput.setText(click);
-                        click = "";
-                    }  
+                    switch(operation){
+                        case "+":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                    operation = "/";
                 }else{
                     operator = true;
-                    click = "";
+                    click = "0";
                     operation ="/";
+                    onedecimal = false;
                 }
             }
         });
         //sign changer
         Buttons[15].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
+
                 
-                //Result에서 맨 앞 부호 바꿔주기
+                calinput.setText(click);                
             }
         });
         //equal
@@ -336,7 +553,7 @@ public class calculator extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e){
                 //여태 들어간 click을 후위로 변환하고 계산
                 if(operator = false){
-                }else if(operator = true){
+                }else if(operator == true &&  double_operator == false){
                     switch(operation){
                         case "+":
                             if(secondtyped = false){
@@ -350,7 +567,8 @@ public class calculator extends JFrame implements ActionListener{
                             operator = false;
                             operation = "";
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "-":
                             if(secondtyped = false){
@@ -364,7 +582,8 @@ public class calculator extends JFrame implements ActionListener{
                             operator = false;
                             operation = "";
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "*":
                             if(secondtyped = false){
@@ -378,7 +597,8 @@ public class calculator extends JFrame implements ActionListener{
                             operation = "";
                             operator = false;
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "/":
                             if(secondtyped = false){
@@ -387,13 +607,14 @@ public class calculator extends JFrame implements ActionListener{
                             if(second == 0){
                                 click = "ERROR";
                                 calinput.setText(click);
-                                click = "";
+                                click = "0";
                                 operator = false;
                                 first = 0;
                                 second = 0;
                                 secondtyped = false;
                                 operation = "";
                                 operator = false;
+                                onedecimal = false;
                             }else{
                                 ANS = first / second;
                                 first = ANS;
@@ -403,13 +624,14 @@ public class calculator extends JFrame implements ActionListener{
                                 operation = "";
                                 operator = false;
                                 calinput.setText(click);
-                                click = "";
+                                click = "0";
+                                onedecimal = false;
                             }  
                             break;
                         default:
                             break;
                     }
-                }else if(double_operator = true){
+                }else if(operator == true &&  double_operator == false){
                     switch(operation){
                         case "++":
                             if(secondtyped = false){
@@ -419,7 +641,8 @@ public class calculator extends JFrame implements ActionListener{
                             first = ANS;
                             click = ANS + "";
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "--":
                             if(secondtyped = false){
@@ -429,7 +652,8 @@ public class calculator extends JFrame implements ActionListener{
                             first = ANS;
                             click = ANS + "";
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "**":
                             if(secondtyped = false){
@@ -439,7 +663,8 @@ public class calculator extends JFrame implements ActionListener{
                             first = ANS;
                             click = ANS + "";
                             calinput.setText(click);
-                            click = "";
+                            click = "0";
+                            onedecimal = false;
                             break;
                         case "//":
                             if(secondtyped = false){
@@ -448,19 +673,21 @@ public class calculator extends JFrame implements ActionListener{
                             if(second == 0){
                                 click = "ERROR";
                                 calinput.setText(click);
-                                click = "";
+                                click = "0";
                                 operator = false;
                                 first = 0;
                                 second = 0;
                                 secondtyped = false;
                                 operation = "";
                                 operator = false;
+                                onedecimal = false;
                             }else{
                                 ANS = first / second;
                                 first = ANS;
                                 click = ANS + "";
                                 calinput.setText(click);
-                                click = "";
+                                click = "0";
+                                onedecimal = false;
                             }
                             break;
                         default:
@@ -483,17 +710,82 @@ public class calculator extends JFrame implements ActionListener{
                     double_operator = true;
                     operation = "++";
                 }else if (operator == true && secondtyped == true){
-                    ANS = first + second;
-                    first = ANS;
-                    second = 0;
-                    secondtyped = false;
-                    click = ANS + "";
-                    operation = "";
-                    calinput.setText(click);
-                    click = "";
+                    switch(operation){
+                        case "+":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(secondtyped = false){
+                                second = first;
+                            }
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                    operation = "+";
                 }else{
                     operator = true;
-                    click = "";
+                    click = "0";
                     operation ="+";
                 }
             }
@@ -501,7 +793,7 @@ public class calculator extends JFrame implements ActionListener{
         //Clear
         Buttons[19].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                click = "";
+                click = "0";
                 onedecimal = false;
                 calinput.setText(click);
             }
@@ -515,26 +807,35 @@ public class calculator extends JFrame implements ActionListener{
                 operation = "";
                 operator = false;
                 double_operator = false;
-                click = "";
+                click = "0";
                 onedecimal = false;
                 calinput.setText(click);
             }
         });
         //Delete one digit
+        //문제점은 0에서 지우면 TextField에서 사라진다
         Buttons[21].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(click.length() != 0){
                     click = calinput.getText();
                     click = click.substring(0, click.length()-1);
-                }else{
+                    calinput.setText(click);
+                    if(operator == true){
+                        second = Double.parseDouble(click);
+                        secondtyped = true;
+                    }else{
+                        first = Double.parseDouble(click);
+                    }
+                }else if(click.length() == 0 || click == "0"){
                     click = "0";
+                    calinput.setText(click);
+                    if(operator == true){
+                        second = Double.parseDouble(click);
+                        secondtyped = true;
+                    }else{
+                        first = Double.parseDouble(click);
+                    }
                 }
-                if(secondtyped = true){
-                    second = Double.parseDouble(click);
-                }else{
-                    first = Double.parseDouble(click);
-                }
-                calinput.setText(click);
             }
         });
         //Memory 
@@ -543,13 +844,15 @@ public class calculator extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e){
                 click = memory + "";
                 calinput.setText(click);
-                click = "";
+                click = "0";
             }
         });
         //Memory Clear
         Buttons[23].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 memory = 0;
+                click = "0";
+                calinput.setText(click);
             }
         });
         //Memory Plus
@@ -557,7 +860,7 @@ public class calculator extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e){
                 memory += first;
                 first = 0;
-                click = "";
+                click = "0";
             }
         });
         //Memory Minus
@@ -565,12 +868,13 @@ public class calculator extends JFrame implements ActionListener{
             public void actionPerformed(ActionEvent e){
                 memory -= first;
                 first = 0;
-                click = "";
+                click = "0";
             }
         });
 
 
         //버튼 입력 부분 끝
+
         for(int i = 0; i < Buttons.length; i++){
             if(i<12){
                 Buttons[i].setForeground(Color.black);
@@ -604,7 +908,8 @@ public class calculator extends JFrame implements ActionListener{
         add(NPanel, BorderLayout.NORTH);
         add(WPanel, BorderLayout.WEST);
         add(EPanel, BorderLayout.EAST);
-        setSize(300,300);        
+        setSize(300,300);
+        //버튼 배치        
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
