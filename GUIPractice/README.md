@@ -3,6 +3,10 @@
 
 ## CALCULATOR
 
+## 수정 HISTORY
+#### 2019년 5월 1일 : 사용자가 M+/M-도 equal처럼 계산되어서 들어가는 기능을 요구. (수정 완료)
+#### 2019년 5월 1일 : 사용자가 현재 memory에 숫자가 들어가있는지 및 Double_operator가 진행중인지 필드 표시 요구. (수정 중)
+
 ### ATTRIBUTE
 ##### click(String) : 클릭되어지는 변수로 유저에게 표시가 되는 문자열
 ##### operation(String) : 연산 변수로 유저가 누른 연산자를 기록하는 변수

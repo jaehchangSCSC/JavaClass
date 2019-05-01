@@ -869,17 +869,263 @@ public class calculator extends JFrame implements ActionListener {
         //Memory Plus
         Buttons[24].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                memory += first;
-                first = 0;
-                click = "0";
+                if(operator = false){
+                }else if(operator = true && double_operator == false){
+                    if(secondtyped = false){
+                        second = first;
+                    }
+                    switch(operation){
+                        case "+":
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operator = false;
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operator = false;
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            operator = false;
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                operator = false;
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                operator = false;
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                }else if(double_operator = true){
+                    if(secondtyped = false){
+                        second = first;
+                        secondtyped = true;
+                    }
+                    switch(operation){
+                        case "++":
+                            ANS = first + second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "--":   
+                            ANS = first - second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "**":
+                            ANS = first * second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "//":
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                operator = false;
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                click = ANS + "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                memory += ANS;
             }
         });
         //Memory Minus
         Buttons[25].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                memory -= first;
-                first = 0;
-                click = "0";
+                if(operator = false){
+                }else if(operator = true && double_operator == false){
+                    if(secondtyped = false){
+                        second = first;
+                    }
+                    switch(operation){
+                        case "+":
+                            ANS = first + second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operator = false;
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "-":
+                            ANS = first - second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operator = false;
+                            operation = "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "*":
+                            ANS = first * second;
+                            first = ANS;
+                            second = 0;
+                            secondtyped = false;
+                            click = ANS + "";
+                            operation = "";
+                            operator = false;
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "/":
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                operator = false;
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                second = 0;
+                                secondtyped = false;
+                                click = ANS + "";
+                                operation = "";
+                                operator = false;
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }  
+                            break;
+                        default:
+                            break;
+                    }
+                }else if(double_operator = true){
+                    if(secondtyped = false){
+                        second = first;
+                        secondtyped = true;
+                    }
+                    switch(operation){
+                        case "++":
+                            ANS = first + second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "--":   
+                            ANS = first - second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "**":
+                            ANS = first * second;
+                            first = ANS;
+                            click = ANS + "";
+                            calinput.setText(click);
+                            click = "0";
+                            onedecimal = false;
+                            break;
+                        case "//":
+                            if(second == 0){
+                                click = "ERROR";
+                                calinput.setText(click);
+                                click = "0";
+                                operator = false;
+                                first = 0;
+                                second = 0;
+                                secondtyped = false;
+                                operation = "";
+                                operator = false;
+                                onedecimal = false;
+                            }else{
+                                ANS = first / second;
+                                first = ANS;
+                                click = ANS + "";
+                                calinput.setText(click);
+                                click = "0";
+                                onedecimal = false;
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                memory -= ANS;
             }
         });
 
