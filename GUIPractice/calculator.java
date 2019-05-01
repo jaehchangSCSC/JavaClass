@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 public class calculator extends JFrame implements ActionListener {
     public String click;
     public String operation;
+    public double double_num;
     // 연산시 사용 변수
     public double ANS = 0;
     public double first = 0;
@@ -28,7 +29,11 @@ public class calculator extends JFrame implements ActionListener {
     public calculator() {
         click = "0";
         setTitle("Calculator");
+        //입력된 값 및 산출 값 표시
         JTextField calinput = new JTextField(click);
+        //현재 상태 표시
+        JTextField status = new JTextField();
+
         calinput.setHorizontalAlignment(JTextField.RIGHT);
         calinput.setFont(new Font(null, Font.PLAIN, 28));
         calinput.setEditable(false);
@@ -870,6 +875,7 @@ public class calculator extends JFrame implements ActionListener {
         Buttons[24].addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
                 if(operator = false){
+                    memory = first;
                 }else if(operator = true && double_operator == false){
                     if(secondtyped = false){
                         second = first;
