@@ -844,6 +844,9 @@ public class calculator extends JFrame implements ActionListener {
                     if(click.indexOf(".") == -1){
                         onedecimal = false;
                     }
+                    if(click.indexOf("-") == 0 && click.length() == 1){
+                        click = "0";
+                    }
                     calinput.setText(click);
                     if(operator == true){
                         second = Double.parseDouble(click);
