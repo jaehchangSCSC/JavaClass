@@ -35,7 +35,7 @@ public class calculator extends JFrame implements ActionListener {
         JTextField status = new JTextField();
 
         calinput.setHorizontalAlignment(JTextField.RIGHT);
-        calinput.setFont(new Font(null, Font.PLAIN, 28));
+        calinput.setFont(new Font(null, Font.PLAIN, 25));
         calinput.setEditable(false);
         Container pane = getContentPane();
         JButton[] Buttons = new JButton[26];
