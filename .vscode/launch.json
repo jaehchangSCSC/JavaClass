@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - anotherpractice",
+            "request": "launch",
+            "mainClass": "anotherpractice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - practice",
+            "request": "launch",
+            "mainClass": "practice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - socketpractice",
+            "request": "launch",
+            "mainClass": "socketpractice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - socketpractice",
+            "request": "launch",
+            "mainClass": "network.socketpractice",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Serialize",
+            "request": "launch",
+            "mainClass": "AbstractPractice.Serialize",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - calculator",
             "request": "launch",
             "mainClass": "guipractice.calculator",

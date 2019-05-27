@@ -1,6 +1,8 @@
 package AbstractPractice;
 
-public class Dog extends Canine{
+import java.io.Serializable;
+
+public class Dog extends Canine implements Serializable {
     public Dog(String newName){
         this.setfood("고기");
         this.noise = "Woof Woof";
