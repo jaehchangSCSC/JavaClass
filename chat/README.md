@@ -1,0 +1,1 @@
+우선 ChatServer를 실행하고 chatclient.jar을 실행.
