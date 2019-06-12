@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ChatServer",
+            "request": "launch",
+            "mainClass": "chat.ChatServer",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChatClientApp",
+            "request": "launch",
+            "mainClass": "chat.ChatClientApp",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ChatClientApp",
+            "request": "launch",
+            "mainClass": "ChatClientApp",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - threadtest",
+            "request": "launch",
+            "mainClass": "threadtest",
+            "projectName": "JavaClass_989e474"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - anotherpractice",
             "request": "launch",
             "mainClass": "anotherpractice",
